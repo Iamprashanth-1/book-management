@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<title>Book Manager</title>
+<body style="background-color: black;">
+<div>
+<center><h1 style="color:red">Welcome to Book management</h1></center>
+<center><form method="POST" action="/view" style="padding: 20px;">
+    <h3 style="color: aqua;">Click here to view book data</h3>
+    <button style="background-color: rgb(0, 110, 255); background-position: 200px;">view</button>
+</form>
+<script>
+  function validateForm() {
+    var x = document.forms["myf"]["id"].value;
+    if (x == "" || x == null) {
+      alert("input can't be empty");
+      return false;
+    }
+  }
+  </script>
+<h3 style="color:crimson;">Please Enter Book name.</h3>
+
+<form name='myf'action='/selecte' method="POST">
+<p style="color: aqua;">Enter id to update<input type="number"  required name="id"></p>
+<input type="submit" value="submit" style="background-color: aqua;">
+</form> 
+
+<form action = "/updat" method = "POST" style="color: aqua;"> 
+  {% if booki!=0%} 
+  {% for ro in booki%}
+
+  <h1 style="color: aliceblue;"> Edit values to update books</h1>
+   <p>id<input type="number" name='id' value="{{ro[0]}}">
+   <p>Book name <input type = "text" name = "title" value="{{ro[1]}}"style="width:300px;" /></p>  
+   <p>Author name <input type = "text" name = "Author" value="{{ ro[2]}}" style="width:300px;" /></p>  
+   <p>Published Year <input type = "number" name = "year" value ="{{ro[3]}}"style="width:300px;" /></p>  
+   <p>Isbn <input type ="number" name = "isbn" value="{{ro[4]}}" style="width:300px;"/></p>   
+   <button onclick="myFunct()" style="background-color: rgb(0, 195, 255);">submit</button>
+    <script>
+        function myFunct() {
+          alert("Update Succesful");
+        }
+        </script>
+   {% endfor %}
+   {% else %}
+      <script style="color: red;">
+        alert('key not found');
+      
+      </script>
+    {% endif %}
+</form>  
+
+<h1 style="color: aliceblue;">Click here to add books</h1>
+<form action = "/insert" method = "POST" style="color:red;" onsubmit="return my()">  
+  
+   <p>Book name <input type = "text" name = "title" required style="width:300px;" /></p>  
+   <p>Author name <input type = "text" name = "Author" required  style="width:300px;" /></p>  
+   <p>Published Year <input type = "number" name = "year"  style="width:300px;" /></p>  
+   <p>Isbn <input type ="number" name = "isbn"  style="width:300px;"/></p>  
+   <p><input type = "submit" value = "submit" style="background-color: aqua;" /></p> 
+   <script>
+     function my(){
+       alert("added succesfully")
+     }
+   </script> 
+</form>  
+
+<script>
+  function validateFm() {
+    var x = document.forms["ls"]["delete"].value;
+    if (x == "" || x == null) {
+      alert("input can't be empty");
+      return false;
+    }
+    else{
+      alert("Deletion Succesful");
+      return True;
+    }
+  }
+  </script>
+
+<form name="ls" method="POST" action="/delet" style="color: aqua;" onsubmit="return validateFm()">
+    <p>Enter id to delete book<input type="number" required name="delete"></p>
+    <button  style="background-color: rgb(0, 195, 255);">delete</button>
+    
+</form>
+</div>
+</body>
