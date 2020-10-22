@@ -1,12 +1,17 @@
 # This is datagrokr-assignment
-  -> First install all requirements using
+# * This is For Part-2 restapi
+# * Follow these steps 
+ * Clone the Repository
+  * next cd Part-2 Rest API
+
+  -> install all requirements using
 
    * pip install -r requirements.txt
 
    ------------------------------------
 
 
-   * Then Run gre.py
+   * Then Run gre.py or using py gre.py
 
    * You will able to see this type
   
