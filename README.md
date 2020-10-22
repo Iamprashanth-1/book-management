@@ -20,4 +20,8 @@
  * Debugger PIN: 697-294-551
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
   * Copy link and paste it in chrome You will able to see Boook Management
+   * Then We can perform operations like view insert delete update
+
+   # * Note
+    * All exceptions are handled succesfully
  
