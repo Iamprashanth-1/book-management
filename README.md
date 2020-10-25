@@ -3,6 +3,7 @@
 # * Follow these steps 
  * Clone the Repository
   * next cd Part-2 Rest API
+  -> Install python 3.7 or greater
 
   -> install all requirements using
 
