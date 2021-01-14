@@ -1,5 +1,4 @@
-# This is datagrokr-assignment
-# * This is For Part-2 restapi
+
 # * Follow these steps 
  * Clone the Repository
   * next cd Part-2 Rest API
